@@ -1,1 +1,5 @@
 /target
+/temp
+/upload
+deploy/channel-artifacts
+deploy/crypto-config

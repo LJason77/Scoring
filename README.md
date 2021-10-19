@@ -4,6 +4,12 @@
 ![GitHub forks](https://img.shields.io/github/forks/LJason77/Scoring?style=social)
 ![GitHub Repo stars](https://img.shields.io/github/stars/LJason77/Scoring?style=social)
 
+## 生成文档
+
+```shell
+cargo doc --no-deps --release -q --lib
+```
+
 ## 许可
 
 [![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)

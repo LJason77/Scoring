@@ -1,0 +1,43 @@
+# Copyright IBM Corp. All Rights Reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+OrdererOrgs:
+  - Name: Orderer
+    Domain: gdzce.cn
+    EnableNodeOUs: true
+    Specs:
+      - Hostname: order
+      - Hostname: order2
+      - Hostname: order3
+      - Hostname: order4
+      - Hostname: order5
+
+PeerOrgs:
+  - Name: Organization1
+    Domain: organization1.gdzce.cn
+    EnableNodeOUs: true
+    Specs:
+      - Hostname: node1
+      - Hostname: node2
+    Users:
+      Count: 1
+
+  - Name: Organization2
+    Domain: organization2.gdzce.cn
+    EnableNodeOUs: true
+    Specs:
+      - Hostname: node1
+      - Hostname: node2
+    Users:
+      Count: 1
+
+  - Name: Organization3
+    Domain: organization3.gdzce.cn
+    EnableNodeOUs: true
+    Specs:
+      - Hostname: node1
+      - Hostname: node2
+    Users:
+      Count: 1

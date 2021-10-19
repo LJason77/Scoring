@@ -1,0 +1,278 @@
+# Copyright IBM Corp. All Rights Reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+---
+Organizations:
+    - &OrdererOrg
+        Name: OrdererOrg
+
+        ID: OrdererMSP
+
+        MSPDir: crypto-config/ordererOrganizations/gdzce.cn/msp
+
+        Policies:
+            Readers:
+                Type: Signature
+                Rule: "OR('OrdererMSP.member')"
+            Writers:
+                Type: Signature
+                Rule: "OR('OrdererMSP.member')"
+            Admins:
+                Type: Signature
+                Rule: "OR('OrdererMSP.admin')"
+
+    - &Organization1
+        Name: Organization1MSP
+
+        ID: Organization1MSP
+
+        MSPDir: crypto-config/peerOrganizations/organization1.gdzce.cn/msp
+
+        Policies:
+            Readers:
+                Type: Signature
+                Rule: "OR('Organization1MSP.admin', 'Organization1MSP.peer', 'Organization1MSP.client')"
+            Writers:
+                Type: Signature
+                Rule: "OR('Organization1MSP.admin', 'Organization1MSP.client')"
+            Admins:
+                Type: Signature
+                Rule: "OR('Organization1MSP.admin')"
+
+        AnchorPeers:
+            - Host: node2.organization1.gdzce.cn
+              Port: 8051
+
+    - &Organization2
+        Name: Organization2MSP
+
+        ID: Organization2MSP
+
+        MSPDir: crypto-config/peerOrganizations/organization2.gdzce.cn/msp
+
+        Policies:
+            Readers:
+                Type: Signature
+                Rule: "OR('Organization2MSP.admin', 'Organization2MSP.peer', 'Organization2MSP.client')"
+            Writers:
+                Type: Signature
+                Rule: "OR('Organization2MSP.admin', 'Organization2MSP.client')"
+            Admins:
+                Type: Signature
+                Rule: "OR('Organization2MSP.admin')"
+
+        AnchorPeers:
+            - Host: node2.organization2.gdzce.cn
+              Port: 10051
+
+    - &Organization3
+        Name: Organization3MSP
+
+        ID: Organization3MSP
+
+        MSPDir: crypto-config/peerOrganizations/organization3.gdzce.cn/msp
+
+        Policies:
+            Readers:
+                Type: Signature
+                Rule: "OR('Organization3MSP.admin', 'Organization3MSP.peer', 'Organization3MSP.client')"
+            Writers:
+                Type: Signature
+                Rule: "OR('Organization3MSP.admin', 'Organization3MSP.client')"
+            Admins:
+                Type: Signature
+                Rule: "OR('Organization3MSP.admin')"
+
+        AnchorPeers:
+            - Host: node2.organization3.gdzce.cn
+              Port: 12051
+
+
+Capabilities:
+    Channel: &ChannelCapabilities
+        V1_4_3: true
+        V1_3: false
+        V1_1: false
+
+    Orderer: &OrdererCapabilities
+        V1_4_2: true
+        V1_1: false
+
+    Application: &ApplicationCapabilities
+        V1_4_2: true
+        V1_3: false
+        V1_2: false
+        V1_1: false
+
+
+Application: &ApplicationDefaults
+
+    Organizations:
+    Policies:
+        Readers:
+            Type: ImplicitMeta
+            Rule: "ANY Readers"
+        Writers:
+            Type: ImplicitMeta
+            Rule: "ANY Writers"
+        Admins:
+            Type: ImplicitMeta
+            Rule: "MAJORITY Admins"
+
+    Capabilities:
+        <<: *ApplicationCapabilities
+
+
+Orderer: &OrdererDefaults
+
+    OrdererType: etcdraft
+
+    Addresses:
+        - order.gdzce.cn:7050
+
+    BatchTimeout: 1s
+    BatchSize:
+        MaxMessageCount: 10
+        AbsoluteMaxBytes: 99 MB
+        PreferredMaxBytes: 512 KB
+
+    EtcdRaft:
+        # The set of Raft replicas for this network. For the etcd/raft-based
+        # implementation, we expect every replica to also be an OSN. Therefore,
+        # a subset of the host:port items enumerated in this list should be
+        # replicated under the Orderer.Addresses key above.
+        Consenters:
+            - Host: order.gdzce.cn
+              Port: 7050
+              ClientTLSCert: crypto-config/ordererOrganizations/gdzce.cn/orderers/order.gdzce.cn/tls/server.crt
+              ServerTLSCert: crypto-config/ordererOrganizations/gdzce.cn/orderers/order.gdzce.cn/tls/server.crt
+            - Host: order2.gdzce.cn
+              Port: 7050
+              ClientTLSCert: crypto-config/ordererOrganizations/gdzce.cn/orderers/order2.gdzce.cn/tls/server.crt
+              ServerTLSCert: crypto-config/ordererOrganizations/gdzce.cn/orderers/order2.gdzce.cn/tls/server.crt
+            - Host: order3.gdzce.cn
+              Port: 7050
+              ClientTLSCert: crypto-config/ordererOrganizations/gdzce.cn/orderers/order3.gdzce.cn/tls/server.crt
+              ServerTLSCert: crypto-config/ordererOrganizations/gdzce.cn/orderers/order3.gdzce.cn/tls/server.crt
+            - Host: order4.gdzce.cn
+              Port: 7050
+              ClientTLSCert: crypto-config/ordererOrganizations/gdzce.cn/orderers/order4.gdzce.cn/tls/server.crt
+              ServerTLSCert: crypto-config/ordererOrganizations/gdzce.cn/orderers/order4.gdzce.cn/tls/server.crt
+            - Host: order5.gdzce.cn
+              Port: 7050
+              ClientTLSCert: crypto-config/ordererOrganizations/gdzce.cn/orderers/order5.gdzce.cn/tls/server.crt
+              ServerTLSCert: crypto-config/ordererOrganizations/gdzce.cn/orderers/order5.gdzce.cn/tls/server.crt
+
+    Organizations:
+    Policies:
+        Readers:
+            Type: ImplicitMeta
+            Rule: "ANY Readers"
+        Writers:
+            Type: ImplicitMeta
+            Rule: "ANY Writers"
+        Admins:
+            Type: ImplicitMeta
+            Rule: "MAJORITY Admins"
+        BlockValidation:
+            Type: ImplicitMeta
+            Rule: "ANY Writers"
+
+
+Channel: &ChannelDefaults
+    Policies:
+        Readers:
+            Type: ImplicitMeta
+            Rule: "ANY Readers"
+        Writers:
+            Type: ImplicitMeta
+            Rule: "ANY Writers"
+        Admins:
+            Type: ImplicitMeta
+            Rule: "MAJORITY Admins"
+
+    Capabilities:
+        <<: *ChannelCapabilities
+
+
+Profiles:
+
+    ThreeOrgsOrdererGenesis:
+        <<: *ChannelDefaults
+        Orderer:
+            <<: *OrdererDefaults
+            Organizations:
+                - *OrdererOrg
+            Capabilities:
+                <<: *OrdererCapabilities
+        Consortiums:
+            SampleConsortium:
+                Organizations:
+                    - *Organization1
+                    - *Organization2
+                    - *Organization3
+
+    ThreeOrgsChannel:
+        Consortium: SampleConsortium
+        <<: *ChannelDefaults
+        Application:
+            <<: *ApplicationDefaults
+            Organizations:
+                - *Organization1
+                - *Organization2
+                - *Organization3
+            Capabilities:
+                <<: *ApplicationCapabilities
+
+    SampleMultiNodeEtcdRaft:
+        <<: *ChannelDefaults
+        Capabilities:
+            <<: *ChannelCapabilities
+        Orderer:
+            <<: *OrdererDefaults
+            OrdererType: etcdraft
+            EtcdRaft:
+                Consenters:
+                    - Host: order.gdzce.cn
+                      Port: 7050
+                      ClientTLSCert: crypto-config/ordererOrganizations/gdzce.cn/orderers/order.gdzce.cn/tls/server.crt
+                      ServerTLSCert: crypto-config/ordererOrganizations/gdzce.cn/orderers/order.gdzce.cn/tls/server.crt
+                    - Host: order2.gdzce.cn
+                      Port: 7050
+                      ClientTLSCert: crypto-config/ordererOrganizations/gdzce.cn/orderers/order2.gdzce.cn/tls/server.crt
+                      ServerTLSCert: crypto-config/ordererOrganizations/gdzce.cn/orderers/order2.gdzce.cn/tls/server.crt
+                    - Host: order3.gdzce.cn
+                      Port: 7050
+                      ClientTLSCert: crypto-config/ordererOrganizations/gdzce.cn/orderers/order3.gdzce.cn/tls/server.crt
+                      ServerTLSCert: crypto-config/ordererOrganizations/gdzce.cn/orderers/order3.gdzce.cn/tls/server.crt
+                    - Host: order4.gdzce.cn
+                      Port: 7050
+                      ClientTLSCert: crypto-config/ordererOrganizations/gdzce.cn/orderers/order4.gdzce.cn/tls/server.crt
+                      ServerTLSCert: crypto-config/ordererOrganizations/gdzce.cn/orderers/order4.gdzce.cn/tls/server.crt
+                    - Host: order5.gdzce.cn
+                      Port: 7050
+                      ClientTLSCert: crypto-config/ordererOrganizations/gdzce.cn/orderers/order5.gdzce.cn/tls/server.crt
+                      ServerTLSCert: crypto-config/ordererOrganizations/gdzce.cn/orderers/order5.gdzce.cn/tls/server.crt
+            Addresses:
+                - order.gdzce.cn:7050
+                - order2.gdzce.cn:7050
+                - order3.gdzce.cn:7050
+                - order4.gdzce.cn:7050
+                - order5.gdzce.cn:7050
+
+            Organizations:
+                - *OrdererOrg
+            Capabilities:
+                <<: *OrdererCapabilities
+        Application:
+            <<: *ApplicationDefaults
+            Organizations:
+                - <<: *OrdererOrg
+        Consortiums:
+            SampleConsortium:
+                Organizations:
+                    - *Organization1
+                    - *Organization2
+                    - *Organization3

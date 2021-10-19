@@ -1,5 +1,12 @@
 #![deny(clippy::pedantic)]
+#![allow(clippy::non_ascii_literal)]
 
-fn main() {
-    println!("Hello, world!");
+#[rocket::main]
+async fn main() {
+    dotenv::dotenv().ok();
+
+    let rocket = scoring::rocket();
+    if let Err(err) = rocket.launch().await {
+        println!("Rocket 启动错误: {}", err);
+    }
 }

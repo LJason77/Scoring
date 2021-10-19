@@ -1,0 +1,157 @@
+[
+  {
+    "item": "Test_SDK",
+    "info": "SDK 能否访问区块链网络",
+    "score": 0.5
+  },
+  {
+    "item": "Test_Register",
+    "info": "注册-测试创建时间是否添加",
+    "score": 0.5
+  },
+  {
+    "item": "Test_Login1",
+    "info": "登录-验证密码",
+    "score": 1.0
+  },
+  {
+    "item": "Test_Login2",
+    "info": "登录-新建帐号能否登录",
+    "score": 1.0
+  },
+  {
+    "item": "Test_ConfirmUser1",
+    "info": "认证用户-是否生成更新时间",
+    "score": 1.0
+  },
+  {
+    "item": "Test_ConfirmUser2",
+    "info": "认证用户-是否修改状态成功",
+    "score": 1.0
+  },
+  {
+    "item": "Test_GetPersons1",
+    "info": "状态为空，是否返回所有数据",
+    "score": 1.0
+  },
+  {
+    "item": "Test_GetPersons2",
+    "info": "状态为新建，是否返回新建状态的人员列表",
+    "score": 1.0
+  },
+  {
+    "item": "Test_GetPersons3",
+    "info": "状态为确认，是否返回确认状态的人员列表",
+    "score": 1.0
+  },
+  {
+    "item": "Test_GetPersons4",
+    "info": "状态为其他，是否返回状态不存在报错",
+    "score": 1.0
+  },
+  {
+    "item": "Test_NewPaper1",
+    "info": "是否分配论文 ID",
+    "score": 1.0
+  },
+  {
+    "item": "Test_NewPaper2",
+    "info": "是否生成创建时间",
+    "score": 1.0
+  },
+  {
+    "item": "Test_SubmitPaper",
+    "info": "是否生成提交时间",
+    "score": 1.0
+  },
+  {
+    "item": "Test_DeletePaper",
+    "info": "是否删除论文成功",
+    "score": 1.0
+  },
+  {
+    "item": "Test_RejectPaper",
+    "info": "是否生成退回时间",
+    "score": 1.0
+  },
+  {
+    "item": "Test_ApprovePaper",
+    "info": "是否生成通过时间",
+    "score": 1.0
+  },
+  {
+    "item": "Test_MarkPaper",
+    "info": "评分是否成功",
+    "score": 1.0
+  },
+  {
+    "item": "Test_UpdatePaper",
+    "info": "是否生成更新时间",
+    "score": 1.0
+  },
+  {
+    "item": "Test_GetPaper0",
+    "info": "是否获取成功",
+    "score": 1.0
+  },
+  {
+    "item": "Test_Schedule",
+    "info": "安排答辩是否成功",
+    "score": 1.0
+  },
+  {
+    "item": "Test_ArchivePaper",
+    "info": "论文归档是否成功",
+    "score": 1.0
+  },
+  {
+    "item": "Test_GetPapers01",
+    "info": "学生是否可以查看自己所有的论文",
+    "score": 1.0
+  },
+  {
+    "item": "Test_GetPapers2",
+    "info": "答辩列表只能看到提交给该老师的提交状态的论文",
+    "score": 1.0
+  },
+  {
+    "item": "Test_GetPapers3",
+    "info": "论文审核列表只能查看需要当前老师审核的论文",
+    "score": 1.0
+  },
+  {
+    "item": "Test_GetPapers4",
+    "info": "学校可以查看所有论文",
+    "score": 1.0
+  },
+  {
+    "item": "Test_GetPapers5",
+    "info": "学校可以查看答辩通过状态的所有论文",
+    "score": 1.0
+  },
+  {
+    "item": "Test_GetPapers6",
+    "info": "学校可以查看归档状态的所有论文",
+    "score": 1.0
+  },
+  {
+    "item": "Test_GetPapers7",
+    "info": "学校可以查看导师通过状态的所有论文",
+    "score": 1.0
+  },
+  {
+    "item": "Test_GetPapers8",
+    "info": "学校可以查看答辩状态的所有论文",
+    "score": 1.0
+  },
+  {
+    "item": "Test_GetPapers9",
+    "info": "学校可以查看新建状态的所有论文",
+    "score": 1.0
+  },
+  {
+    "item": "Test_GetPapers10",
+    "info": "学校可以查看提交状态的所有论文",
+    "score": 1.0
+  }
+]

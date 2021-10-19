@@ -1,0 +1,302 @@
+[
+  {
+    "item": "Test_newPerson1",
+    "info": "人员状态是否更改为新增",
+    "score": 0.5
+  },
+  {
+    "item": "Test_newPersont6",
+    "info": "参数非空校验",
+    "score": 0.5
+  },
+  {
+    "item": "Test_newPersont7",
+    "info": "账号类型错误或账号是否存在",
+    "score": 0.5
+  },
+  {
+    "item": "Test_newPersont8",
+    "info": "验证学号/工号是否重复",
+    "score": 0.5
+  },
+  {
+    "item": "Test_updateScore3",
+    "info": "参数非空校验",
+    "score": 0.5
+  },
+  {
+    "item": "Test_updateScore6",
+    "info": "验证评分是否在 0-100 分之间",
+    "score": 0.5
+  },
+  {
+    "item": "Test_updateScore7",
+    "info": "验证论文是否存在",
+    "score": 0.5
+  },
+  {
+    "item": "Test_updateScore8",
+    "info": "只能对答辩状态的论文评分",
+    "score": 0.5
+  },
+  {
+    "item": "Test_updateScore9",
+    "info": "不能重复评分",
+    "score": 0.5
+  },
+  {
+    "item": "Test_updateScore11",
+    "info": "验证 0 分是否为有效分数",
+    "score": 0.5
+  },
+  {
+    "item": "Test_updateScore12",
+    "info": "当评分人数达到 5 人时，是否自动计算平均值，确定论文答辩分数",
+    "score": 0.5
+  },
+  {
+    "item": "Test_updateScore13",
+    "info": "当答辩平均分为大于等于 90 分，是否更改状态为答辩通过",
+    "score": 0.5
+  },
+  {
+    "item": "Test_updateScore14",
+    "info": "当答辩平均分为小于 90 分时，是否更改状态为退回",
+    "score": 0.5
+  },
+  {
+    "item": "Test_deletePaper2",
+    "info": "参数非空校验",
+    "score": 0.5
+  },
+  {
+    "item": "Test_deletePaper4",
+    "info": "验证论文是否存在",
+    "score": 0.5
+  },
+  {
+    "item": "Test_deletePaper6",
+    "info": "验证是否只能删除新建或退回状态的论文",
+    "score": 0.5
+  },
+  {
+    "item": "Test_deletePaper1",
+    "info": "是否删除成功",
+    "score": 0.5
+  },
+  {
+    "item": "Test_getPerson1",
+    "info": "参数非空校验",
+    "score": 0.5
+  },
+  {
+    "item": "Test_getPerson5",
+    "info": "账户不存在",
+    "score": 0.5
+  },
+  {
+    "item": "Test_modPerson1",
+    "info": "参数非空校验",
+    "score": 0.5
+  },
+  {
+    "item": "Test_modPerson4",
+    "info": "验证当前账号是否存在",
+    "score": 0.5
+  },
+  {
+    "item": "Test_modPerson7",
+    "info": "验证需要修改的用户是否存在",
+    "score": 0.5
+  },
+  {
+    "item": "Test_modPerson5",
+    "info": "人员状态是否更新为已确认和修改论文更新时间",
+    "score": 0.5
+  },
+  {
+    "item": "Test_getPersonList1",
+    "info": "是否返回所有人员列表",
+    "score": 0.5
+  },
+  {
+    "item": "Test_getPersonList2",
+    "info": "参数非空校验",
+    "score": 0.5
+  },
+  {
+    "item": "Test_newPaper2",
+    "info": "参数非空校验",
+    "score": 0.5
+  },
+  {
+    "item": "Test_newPaper1",
+    "info": "论文状态是否为新建",
+    "score": 0.5
+  },
+  {
+    "item": "Test_newPaper3",
+    "info": "Test_newPaper3",
+    "score": 0.5
+  },
+  {
+    "item": "Test_newPaper0",
+    "info": "验证论文 title 是否已存在",
+    "score": 0.5
+  },
+  {
+    "item": "Test_modPaper2",
+    "info": "参数非空校验",
+    "score": 0.5
+  },
+  {
+    "item": "Test_modPaper1",
+    "info": "验证修改是否成功",
+    "score": 0.5
+  },
+  {
+    "item": "Test_modPaper5",
+    "info": "验证论文是否存在",
+    "score": 0.5
+  },
+  {
+    "item": "Test_modPaper6",
+    "info": "只能修改新建或退回状态的论文",
+    "score": 0.5
+  },
+  {
+    "item": "Test_modPaper9",
+    "info": "Test_modPaper9",
+    "score": 0.5
+  },
+  {
+    "item": "Test_modPaper8",
+    "info": "论文 Title 已存在",
+    "score": 0.5
+  },
+  {
+    "item": "Test_getPaper1",
+    "info": "验证获取论文是否成功",
+    "score": 0.5
+  },
+  {
+    "item": "Test_getPaper2",
+    "info": "参数非空校验",
+    "score": 0.5
+  },
+  {
+    "item": "Test_getPaper4",
+    "info": "验证论文是否存在",
+    "score": 0.5
+  },
+  {
+    "item": "Test_getPapers",
+    "info": "验证是否返回所有论文",
+    "score": 0.5
+  },
+  {
+    "item": "Test_submitPaper1",
+    "info": "提交论文是否成功",
+    "score": 0.5
+  },
+  {
+    "item": "Test_submitPaper2",
+    "info": "参数非空校验",
+    "score": 0.5
+  },
+  {
+    "item": "Test_submitPaper4",
+    "info": "验证论文是否存在",
+    "score": 0.5
+  },
+  {
+    "item": "Test_submitPaper6",
+    "info": "只能提交新建状态或退回状态的论文",
+    "score": 0.5
+  },
+  {
+    "item": "Test_rejectPaper2",
+    "info": "参数非空校验",
+    "score": 0.5
+  },
+  {
+    "item": "Test_rejectPaper1",
+    "info": "论文退回是否成功",
+    "score": 0.5
+  },
+  {
+    "item": "Test_rejectPaper6",
+    "info": "验证论文是否存在",
+    "score": 0.5
+  },
+  {
+    "item": "Test_rejectPaper9",
+    "info": "只能退回提交状态的论文",
+    "score": 0.5
+  },
+  {
+    "item": "Test_approvePaper1",
+    "info": "论文通过是否成功",
+    "score": 0.5
+  },
+  {
+    "item": "Test_approvePaper2",
+    "info": "参数非空校验",
+    "score": 0.5
+  },
+  {
+    "item": "Test_approvePaper5",
+    "info": "论文不存在",
+    "score": 0.5
+  },
+  {
+    "item": "Test_approvePaper8",
+    "info": "只能通过提交状态的论文",
+    "score": 0.5
+  },
+  {
+    "item": "Test_oralDefense1",
+    "info": "安排答辩是否成功",
+    "score": 0.5
+  },
+  {
+    "item": "Test_oralDefense2",
+    "info": "参数非空校验",
+    "score": 0.5
+  },
+  {
+    "item": "Test_oralDefense4",
+    "info": "至少安排 5 位老师",
+    "score": 0.5
+  },
+  {
+    "item": "Test_oralDefense6",
+    "info": "论文不存在, 请输入正确的论文ID",
+    "score": 0.5
+  },
+  {
+    "item": "Test_oralDefense9",
+    "info": "导师没有通过的论文无法安排答辩",
+    "score": 0.5
+  },
+  {
+    "item": "Test_archivePaper1",
+    "info": "论文归档是否成功",
+    "score": 0.5
+  },
+  {
+    "item": "Test_archivePaper2",
+    "info": "参数非空校验",
+    "score": 0.5
+  },
+  {
+    "item": "Test_archivePaper4",
+    "info": "论文不存在, 请输入正确的论文 ID",
+    "score": 0.5
+  },
+  {
+    "item": "Test_archivePaper6",
+    "info": "答辩通过的论文才能归档",
+    "score": 0.5
+  }
+]
