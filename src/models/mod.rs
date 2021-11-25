@@ -33,6 +33,8 @@ const BASE62: &[u8] = b"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrst
 /// ## 示例
 ///
 /// ```rust
+/// use scoring::models::PasteId;
+///
 /// let paste_id = PasteId::new(50);
 /// println!("{}", paste_id.to_str());
 /// ```
