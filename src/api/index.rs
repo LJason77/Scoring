@@ -83,7 +83,7 @@ pub async fn upload(data: Data<'_>) -> Custom<Value> {
     );
 
     println!("评分完成");
-    let scores = vec![api_test, chaincode_test];
+    let scores = vec![chaincode_test, api_test];
 
     // 操作完删除文件
     set_current_dir(&current_dir).ok();

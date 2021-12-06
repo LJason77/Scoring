@@ -66,6 +66,8 @@ pub fn get_dir(dir: &str) -> PathBuf {
 }
 
 /// 运行测试
+///
+/// # Panics
 #[must_use]
 pub fn run_test(test: &str, test_map: &[TestMap]) -> Vec<Score> {
     create_dir_all("test").expect("创建 test 目录失败");
@@ -92,7 +94,9 @@ pub fn run_test(test: &str, test_map: &[TestMap]) -> Vec<Score> {
 
         let mut vec = Vec::new();
         for line in BufReader::new(file).lines().flatten() {
-            vec.push(serde_json::from_str::<Test>(&line).expect("解析失败"));
+            let s = serde_json::from_str::<Test>(&line)
+                .unwrap_or_else(|_| panic!("test/{}.json 解析失败", &test_item.item));
+            vec.push(s);
         }
 
         // 生成结果

@@ -1,5 +1,6 @@
 /target
 /temp
 /upload
+/release
 deploy/channel-artifacts
 deploy/crypto-config
